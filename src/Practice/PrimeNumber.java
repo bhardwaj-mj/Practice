@@ -3,16 +3,27 @@ package Practice;
 import java.util.Scanner;
 
 public class PrimeNumber {
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Enter the number ");
-        int x=sc.nextInt();
-        for(int i=2;i<x;i++){
-            if(x%i==0){
-                System.out.println(x+" is not a prime number");
-                break;
+    static void isPrime(int n){
+        int count=0;
+        for(int i=2;i<n;i++){
+            if(n%i==0){
+                count++;
             }
         }
-        System.out.println(x+" is a prime number");
+        if(count==0){
+            System.out.println(n+" is a prime number");
+        }
+        else{
+            System.out.println(n+" is not a prime number");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the number ");
+        int number= sc.nextInt();
+        isPrime(number);
     }
 }
+
+
